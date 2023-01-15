@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+		</style>
+	</head>
+	<body>
+		<script src="node_modules/three/build/three.js"></script>
+		<script>
+			const scene = new THREE.Scene();
+			const camera1 = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+			const renderer1 = new THREE.WebGLRenderer();
+			
+			document.body.appendChild( renderer1.domElement );
+
+            const points = [];
+            points.push( new THREE.Vector3( - 10, 0, 0 ) );
+            points.push( new THREE.Vector3( 0, 10, 0 ) );
+            points.push( new THREE.Vector3( 10, 0, 0 ) );
+			const geometry = new THREE.BufferGeometry().setFromPoints( points );
+			const material = new THREE.LineBasicMaterial( { color: "white" } );
+			const line = new THREE.Line( geometry, material );
+			scene.add( line );
+            var cubeGeometry = new THREE.CubeGeometry(20, 20, 20);
+
+			// function animate() {
+			// 	requestAnimationFrame( animate );
+
+			// 	cube.rotation.x += .01;
+			// 	cube.rotation.y += 0.01;
+
+			// 	renderer.render( scene, camera );
+			// };
+            renderer1.setSize(200, 200)
+            renderer1.render( scene, camera1 );
+			
+		</script>
+	</body>
+</html>

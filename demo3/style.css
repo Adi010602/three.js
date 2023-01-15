@@ -1,0 +1,13 @@
+body{
+  background: hsl(0, 0%, 95%);
+  overflow-x : hidden ;
+}
+.webgl{
+  position: absolute;
+  outline: none;
+  mix-blend-mode: exclusion;
+  z-index: -9999;
+  top: 0;
+  left: 0;
+
+}
