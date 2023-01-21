@@ -4,7 +4,7 @@ import * as dat from 'dat.gui';
 import { AlwaysStencilFunc, Box2, Box3, DirectionalLight, SpotLightHelper, Vector4 } from 'three';
 import{GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js'; 
 import earth from './src/img/original.jpg';
-import stars from './src/img/star-pattern-white-background-gold-gift-wrap-vector-20510302.jpg';
+import stars from './src/img/stars copy.jpg';
  
 const house = new URL('./src/untitled.glb', import.meta.url);
 const scene = new THREE.Scene();
@@ -142,9 +142,9 @@ scene.background= reflectionCube.load([
   earth,
   earth,
  
-  earth,
-  earth,
-  earth,
+  stars,
+  stars, 
+  stars
  
 ]);
 
@@ -204,7 +204,7 @@ function animate(time){
 
   raycaster.setFromCamera(mousePosition ,camera);
 const intersects = raycaster.intersectObjects(scene.children);
-console.log(intersects);
+
 for(let i =0 ; i<intersects.length ; i++){
   if(intersects[i].object.id === sphereId)
   intersects[i].object.material.color.set(0xFF0000);
